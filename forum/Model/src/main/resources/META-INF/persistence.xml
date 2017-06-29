@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF8" ?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+             version="1.0">
+  <persistence-unit name="ForumUnit">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <jta-data-source>jdbc/test_db</jta-data-source>
+    <class>ru.sample.model.entity.Person</class>
+    <class>ru.sample.model.entity.Messages</class>
+    <properties>
+      <property name="eclipselink.target-server" value="WebLogic 10"/>
+      <property name="javax.persistence.jtaDataSource"
+                value="jdbc/test_db"/>
+      <property name="eclipselink.logging.logger"
+                value="org.eclipse.persistence.logging.DefaultSessionLog"/>
+      <property name="eclipselink.logging.level" value="FINE"/>
+      <property name="javax.persistence.transactionType" value="JTA"/>
+    </properties>
+  </persistence-unit>
+</persistence>
